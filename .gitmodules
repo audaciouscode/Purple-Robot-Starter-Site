@@ -1,0 +1,3 @@
+[submodule "purple_robot"]
+	path = purple_robot
+	url = https://github.com/audaciouscode/Purple-Robot-Django.git

@@ -1,3 +1,4 @@
+
 import os
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -11,7 +12,7 @@ ALLOWED_HOSTS = [ 'your.site.com' ]
 
 DATABASES = {
 	'default': {
-		'ENGINE':   'django.db.backends.postgresql_psycopg2',
+		'ENGINE':   'django.contrib.gis.db.backends.postgis',
 		'NAME':     '',
 		'USER':     '',
 		'PASSWORD': '',
@@ -23,7 +24,7 @@ DATABASES = {
 if 'TRAVIS' in os.environ:
     DATABASES = {
         'default': {
-            'ENGINE':   'django.db.backends.postgresql_psycopg2',
+            'ENGINE':   'django.contrib.gis.db.backends.postgis',
             'NAME':     'travisci',
             'USER':     'postgres',
             'PASSWORD': '',
@@ -31,3 +32,9 @@ if 'TRAVIS' in os.environ:
             'PORT':     '',
         }
     }
+
+PURPLE_ROBOT_DISABLE_DATA_CHECKS = False
+PURPLE_ROBOT_SITE_PREFIX = 'changeme'
+PURPLE_ROBOT_SHOW_DEVICE_ID_HEADER = False
+PURPLE_ROBOT_SHOW_NOTES = False
+URL_PREFIX = 'https://my.purple-robot.com/'
